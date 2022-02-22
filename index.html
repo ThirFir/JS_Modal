@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css">
+		<script src="js.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="text">
+				모달창 띄우기
+			</div>
+			<input type="button" value="Click!" class="click_button" id="open">
+		</div>
+		<div class = "modal hidden">
+			<div class="md_overlay">
+			</div>
+			<div class ="modal_window">
+				<div class="text">
+					자바스크립트 - 모달창 입니다.
+				</div>
+				<input type="button" value="Close" class="click_button" id="close">
+			</div>
+		</div>
+		<script>
+		const openButton = document.querySelector("#open");
+		const modal = document.querySelector(".modal");
+		const closeButton = modal.querySelector("#close");
+
+		const openModal = () => {
+			modal.classList.remove("hidden");
+		}
+		const closeModal = () => {
+			modal.classList.add("hidden");
+		}
+
+		openButton.addEventListener("click", openModal);
+		closeButton.addEventListener("click", closeModal);
+		</script>
+	</body>
+</html>
